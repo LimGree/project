@@ -1,7 +1,7 @@
 // Загрузка букетов из JSON
 async function loadBouquets() {
     try {
-        const response = await fetch('bouquets.json');
+        const response = await fetch('/bouquets.json');
         return await response.json();
     } catch (error) {
         console.error('Ошибка загрузки букетов:', error);

@@ -107,7 +107,7 @@ button {
     box-shadow: var(--shadow);
 }
 
-button hover {
+button:hover {
     background-color: var(--dark-purple);
     color: var(--white);
     transform: translateY(-2px);
@@ -118,7 +118,7 @@ button hover {
     color: var(--white);
 }
 
-.login hover {
+.login:hover {
     background-color: var(--white);
     color: var(--red);
 }
@@ -177,7 +177,8 @@ h3 {
 
 /* Сетка товаров */
 
-.grid {
+.grid,
+.catalog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
@@ -310,24 +311,26 @@ h3 {
 
 .catalog-grid {
     width: 75%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
 }
 
 
-/* Оформление заказа */
+/* Оформление заказа и корзина */
 
-.order-content {
+.order-content,
+.cart {
     display: flex;
     gap: 20px;
 }
 
-.order-items {
+.order-items,
+.cart-items {
     width: 50%;
 }
 
-.order-form {
+.order-form,
+.register,
+.login,
+.admin {
     width: 50%;
     background-color: var(--white);
     padding: 20px;
@@ -335,7 +338,10 @@ h3 {
     box-shadow: var(--shadow);
 }
 
-.order-form label {
+.order-form label,
+.register label,
+.login label,
+.admin label {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
@@ -343,7 +349,12 @@ h3 {
 }
 
 .order-form input,
-.order-form textarea {
+.order-form textarea,
+.register input,
+.login input,
+.admin input,
+.admin textarea,
+.admin select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -352,7 +363,8 @@ h3 {
     font-family: 'Montserrat', sans-serif;
 }
 
-.order-form textarea {
+.order-form textarea,
+.admin textarea {
     height: 100px;
     resize: vertical;
 }
@@ -389,7 +401,7 @@ footer {
     text-decoration: none;
 }
 
-.footer-section a hover {
+.footer-section a:hover {
     text-decoration: underline;
 }
 
@@ -424,7 +436,7 @@ footer {
 
 /* Адаптивность */
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     .nav-buttons {
         display: none;
         flex-direction: column;
@@ -462,16 +474,21 @@ footer {
     .catalog-grid {
         width: 100%;
     }
-    .order-content {
+    .order-content,
+    .cart {
         flex-direction: column;
     }
     .order-items,
-    .order-form {
+    .order-form,
+    .cart-items,
+    .register,
+    .login,
+    .admin {
         width: 100%;
     }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
     .grid,
     .catalog-grid {
         grid-template-columns: 1fr;

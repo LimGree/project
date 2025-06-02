@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оформление заказа - Нежный букет</title>
+    <title>Админ-панель - Нежный букет</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -26,40 +26,38 @@
             <div class="nav-buttons">
                 <a href="index.html"><button>Главная</button></a>
                 <a href="catalog.html"><button>Каталог</button></a>
+                <a href="order.html"><button>Оформить заказ</button></a>
                 <a href="cart.html"><button>Корзина</button></a>
-                <button id="admin-btn">Админ-панель</button>
                 <button id="register-btn">Регистрация</button>
                 <button id="login-btn" class="login">Вход</button>
                 <button id="logout-btn" class="login" style="display:none;">Выход</button>
             </div>
             <div class="menu-toggle">☰</div>
         </nav>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Найти букет...">
-            <button id="search-btn">Искать</button>
-        </div>
     </header>
     <main>
-        <section class="order">
-            <h2>Оформление заказа</h2>
-            <div class="order-content">
-                <div class="order-items">
-                    <h3>Выбранные букеты</h3>
-                    <div id="cart-items"></div>
-                </div>
-                <div class="order-form">
-                    <h3>Данные для доставки</h3>
-                    <form id="order-form">
-                        <label for="name">Имя:</label>
-                        <input type="text" id="name" required>
-                        <label for="address">Адрес:</label>
-                        <input type="text" id="address" required>
-                        <label for="message">Фраза при получении:</label>
-                        <textarea id="message"></textarea>
-                        <button type="submit" class="buy-btn">Оплатить</button>
-                    </form>
-                </div>
-            </div>
+        <section class="admin">
+            <h2>Админ-панель: Добавить букет</h2>
+            <form id="add-bouquet-form">
+                <label for="bouquet-name">Название:</label>
+                <input type="text" id="bouquet-name" required>
+                <label for="bouquet-description">Описание:</label>
+                <textarea id="bouquet-description" required></textarea>
+                <label for="bouquet-price">Цена (₽):</label>
+                <input type="number" id="bouquet-price" required>
+                <label for="bouquet-discount">Скидка (%):</label>
+                <input type="number" id="bouquet-discount" min="0" max="100" value="0">
+                <label for="bouquet-image">Изображение (URL):</label>
+                <input type="text" id="bouquet-image" required>
+                <label for="bouquet-category">Категория:</label>
+                <select id="bouquet-category" required>
+                    <option value="roses">Розы</option>
+                    <option value="peonies">Пионы</option>
+                    <option value="tulips">Тюльпаны</option>
+                    <option value="hydrangeas">Гортензии</option>
+                </select>
+                <button type="submit" class="buy-btn">Добавить букет</button>
+            </form>
         </section>
     </main>
     <footer>

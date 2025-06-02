@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оформление заказа - Нежный букет</title>
+    <title>Корзина - Нежный букет</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
             <div class="nav-buttons">
                 <a href="index.html"><button>Главная</button></a>
                 <a href="catalog.html"><button>Каталог</button></a>
-                <a href="cart.html"><button>Корзина</button></a>
+                <a href="order.html"><button>Оформить заказ</button></a>
                 <button id="admin-btn">Админ-панель</button>
                 <button id="register-btn">Регистрация</button>
                 <button id="login-btn" class="login">Вход</button>
@@ -40,26 +40,10 @@
         </div>
     </header>
     <main>
-        <section class="order">
-            <h2>Оформление заказа</h2>
-            <div class="order-content">
-                <div class="order-items">
-                    <h3>Выбранные букеты</h3>
-                    <div id="cart-items"></div>
-                </div>
-                <div class="order-form">
-                    <h3>Данные для доставки</h3>
-                    <form id="order-form">
-                        <label for="name">Имя:</label>
-                        <input type="text" id="name" required>
-                        <label for="address">Адрес:</label>
-                        <input type="text" id="address" required>
-                        <label for="message">Фраза при получении:</label>
-                        <textarea id="message"></textarea>
-                        <button type="submit" class="buy-btn">Оплатить</button>
-                    </form>
-                </div>
-            </div>
+        <section class="cart">
+            <h2>Корзина</h2>
+            <div id="cart-items"></div>
+            <button class="buy-btn" id="proceed-to-order">Оформить заказ</button>
         </section>
     </main>
     <footer>

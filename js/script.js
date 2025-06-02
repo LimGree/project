@@ -1,12 +1,46 @@
 // Загрузка букетов из JSON
 async function loadBouquets() {
-    try {
-        const response = await fetch('/bouquets.json');
-        return await response.json();
-    } catch (error) {
-        console.error('Ошибка загрузки букетов:', error);
-        return [];
-    }
+    return [{
+            "id": 1,
+            "name": "Букет \"Нежность\"",
+            "description": "Розы, пионы и эустома в нежно-розовых тонах",
+            "price": 3500,
+            "discount": 0,
+            "image": "images/1.jpg",
+            "category": "roses",
+            "isTop": true
+        },
+        {
+            "id": 2,
+            "name": "Букет \"Сиреневый рай\"",
+            "description": "Гортензии, лаванда и фрезии в фиолетовых оттенках",
+            "price": 4200,
+            "discount": 0,
+            "image": "images/2.jpg",
+            "category": "hydrangeas",
+            "isTop": true
+        },
+        {
+            "id": 3,
+            "name": "Букет \"Розовые мечты\"",
+            "description": "Пионы, розы и эустома",
+            "price": 4000,
+            "discount": 20,
+            "image": "images/2.jpg",
+            "category": "peonies",
+            "isTop": false
+        },
+        {
+            "id": 4,
+            "name": "Букет \"Весеннее настроение\"",
+            "description": "Тюльпаны, ранункулюсы и гиацинты",
+            "price": 2900,
+            "discount": 0,
+            "image": "images/3.jpg",
+            "category": "tulips",
+            "isTop": false
+        }
+    ]
 }
 
 // Отображение карточки букета

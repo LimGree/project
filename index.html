@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветочный магазин "Нежный букет"</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/Lovepik_com-611714365-Bouquet 38 Happy Women's Day Flowers Purple PNG.png" height="150" alt="Логотип Нежный букет">
+                <div class="logo-text">
+                    <h1>Нежный букет</h1>
+                    <p>цветы с любовью</p>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <a href="catalog.html"><button>Каталог</button></a>
+                <a href="order.html"><button>Оформить заказ</button></a>
+                <button>Контактная информация</button>
+                <button class="login">Вход</button>
+            </div>
+            <div class="menu-toggle">☰</div>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Найти букет...">
+            <button>Искать</button>
+        </div>
+    </header>
+    <main>
+        <section class="offers">
+            <h2>Лучшие предложения</h2>
+            <div class="grid">
+                <div class="product-card-horizontal">
+                    <img src="images/10_res750.jpg" alt="Букет 'Нежность'" class="product-img-left">
+                    <div class="product-info-right">
+                        <h3 class="product-name">Букет "Нежность"</h3>
+                        <p>Розы, пионы и эустома в нежно-розовых тонах</p>
+                        <p class="product-price">3 500 ₽</p>
+                        <div class="product-buttons">
+                            <button class="cart-btn">В корзину</button>
+                            <button class="buy-btn">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Повторяем для других букетов -->
+                <div class="product-card-horizontal">
+                    <img src="images/12_res750.jpg" alt="Букет 'Сиреневый рай'" class="product-img-left">
+                    <div class="product-info-right">
+                        <h3 class="product-name">Букет "Сиреневый рай"</h3>
+                        <p>Гортензии, лаванда и фрезии в фиолетовых оттенках</p>
+                        <p class="product-price">4 200 ₽</p>
+                        <div class="product-buttons">
+                            <button class="cart-btn">В корзину</button>
+                            <button class="buy-btn">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Добавить еще 4 карточки аналогично -->
+            </div>
+            <h2>Скидки</h2>
+            <div class="grid">
+                <div class="product-card-horizontal">
+                    <div class="discount-badge">-20%</div>
+                    <img src="images/19_res750.jpg" alt="Букет 'Розовые мечты'" class="product-img-left">
+                    <div class="product-info-right">
+                        <h3 class="product-name">Букет "Розовые мечты"</h3>
+                        <p>Пионы, розы и эустома</p>
+                        <p class="product-price"><s>4 000 ₽</s> 3 200 ₽</p>
+                        <div class="product-buttons">
+                            <button class="cart-btn">В корзину</button>
+                            <button class="buy-btn">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Добавить еще 1 карточку со скидкой -->
+            </div>
+            <h2>Топ букетов</h2>
+            <div class="grid">
+                <div class="product-card-horizontal">
+                    <img src="images/7_res750.jpg" alt="Букет 'Нежность'" class="product-img-left">
+                    <div class="product-info-right">
+                        <h3 class="product-name">Букет "Нежность"</h3>
+                        <p>Розы, пионы и эустома в нежно-розовых тонах</p>
+                        <p class="product-price">3 500 ₽</p>
+                        <div class="product-buttons">
+                            <button class="cart-btn">В корзину</button>
+                            <button class="buy-btn">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Добавить еще 1 карточку -->
+            </div>
+        </section>
+        <section class="reviews">
+            <h3>Отзывы наших клиентов</h3>
+            <div class="review">
+                <p class="review-author">Анна, 28 лет</p>
+                <p>Заказывала букет "Нежность" на годовщину свадьбы. Цветы были свежие и красивые, доставили точно в срок. Муж был в восторге! Обязательно закажу ещё.</p>
+            </div>
+            <div class="review">
+                <p class="review-author">Ольга, 35 лет</p>
+                <p>Букет "Сиреневый рай" превзошёл все ожидания! Цветы простоят долго, аромат потрясающий. Спасибо за качественный сервис и быструю доставку.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>г. Москва, ул. Цветочная, 15</p>
+                <p>+7 (495) 123-45-67</p>
+                <p>info@nezhnuy-buket.ru</p>
+                <p>Ежедневно с 9:00 до 21:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Меню</h3>
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="order.html">Оформление заказа</a>
+                <a href="#">Доставка и оплата</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://i.imgur.com/vXz5Q2f.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://i.imgur.com/vXz5Q2f.png" alt="VK"></a>
+                    <a href="#"><img src="https://i.imgur.com/vXz5Q2f.png" alt="Telegram"></a>
+                </div>
+                <p>Подпишитесь на наши новости и акции</p>
+                <input type="email" placeholder="Ваш email" style="width: 100%; padding: 8px; border-radius: 15px; border: none; margin-top: 10px;">
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Цветочный магазин "Нежный букет". Все права защищены.</p>
+        </div>
+    </footer>
+    <script>
+        // Переключение мобильного меню
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const navButtons = document.querySelector('.nav-buttons');
+            navButtons.style.display = navButtons.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Эффект hover для карточек товаров
+        document.querySelectorAll('.product-card-horizontal').forEach(card => {
+            card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-10px)');
+            card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0)');
+        });
+
+        // Поиск
+        document.querySelector('.search-bar button').addEventListener('click', () => {
+            const searchTerm = document.querySelector('.search-bar input').value;
+            alert('Поиск: ' + searchTerm);
+        });
+
+        // Добавление в корзину
+        document.querySelectorAll('.cart-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Товар добавлен в корзину!');
+            });
+        });
+    </script>
+</body>
+
+</html>

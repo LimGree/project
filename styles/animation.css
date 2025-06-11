@@ -1,7 +1,0 @@
-/* Анимация для предзагрузчика */
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}

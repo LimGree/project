@@ -5,100 +5,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Нежный букет</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styleSet.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
-    <div class="preloader">
-        <div class="spinner"></div>
+    <!-- Прелоадер -->
+    <div id="preloader" class="preloader">
+        <div class="preloader__dots">
+            <span class="preloader-dot"></span>
+            <span class="preloader-dot"></span>
+            <span class="preloader-dot"></span>
+        </div>
+        <p class="preloader__text">Загрузка...</p>
     </div>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav__logo">
-                <img src="images/logo.png" alt="логотип Нежный букет" width="150" height="150" class="nav__logo-img">
-                <div class="nav__logo-text">
-                    <h1>Нежный букет</h1>
-                    <p>цветы с любовью</p>
+
+    <!-- Основной контент -->
+    <div id="content" class="content hidden">
+        <header class="header">
+            <nav class="links">
+                <button class="burger-menu">☰</button>
+                <ul class="links-list">
+                    <li><a href="index.html" class="links-link" data-page="home">Главная</a></li>
+                    <li><a href="catalog.html" class="links-link" data-page="catalog">Каталог</a></li>
+                    <li><a href="order.html" class="links-link" data-page="order">Оформить заказ</a></li>
+                    <li><a href="cart.html" class="links-link" data-page="cart">Корзина</a></li>
+                    <li><a href="admin.html" class="links-link" data-page="admin">Админ-панель</a></li>
+                    <li><a href="register.html" class="links-link" data-page="register">Регистрация</a></li>
+                    <li><a href="login.html" class="links-link" data-page="login">Вход</a></li>
+                    <li><a href="#" class="links-link" data-page="logout">Выход</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!-- Форма поиска -->
+            <form id="search-form" class="search-form">
+                <input type="text" id="search-input" class="search-form__input" placeholder="Поиск букетов...">
+                <button type="submit" class="search-form__button">Найти</button>
+            </form>
+
+            <!-- Карусель букетов -->
+            <section class="cards">
+                <h2 class="section__title">Популярные букеты</h2>
+                <div class="swiper cards__carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card" data-section="bouquet-1">
+                                <img src="images/10_res750.jpg" alt="Букет Нежность" class="card__image">
+                                <h3 class="card__title">Букет "Нежность"</h3>
+                                <p>Розы, пионы и эустома в нежно-розовых тонах</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card" data-section="bouquet-2">
+                                <img src="images/12_res750.jpg" alt="Букет Сиреневый рай" class="card__image">
+                                <h3 class="card__title">Букет "Сиреневый рай"</h3>
+                                <p>Гортензии, лаванда и фрезии в фиолетовых оттенках</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card" data-section="bouquet-3">
+                                <img src="images/19_res750.jpg" alt="Букет Розовые мечты" class="card__image">
+                                <h3 class="card__title">Букет "Розовые мечты"</h3>
+                                <p>Пионы, розы и эустома</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card" data-section="bouquet-4">
+                                <img src="images/16_res750.jpg" alt="Букет Весеннее настроение" class="card__image">
+                                <h3 class="card__title">Букет "Весеннее настроение"</h3>
+                                <p>Тюльпаны, ранункулюсы и гиацинты</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- Список заголовков букетов -->
+                <ul id="card-titles" class="card-titles"></ul>
+            </section>
+
+            <!-- Отзывы клиентов -->
+            <section class="reviews">
+                <h2 class="section__title">Отзывы клиентов</h2>
+                <div class="reviews__filters">
+                    <button class="reviews__filter-button active" data-filter="all">Все</button>
+                    <button class="reviews__filter-button" data-filter="roses">Розы</button>
+                    <button class="reviews__filter-button" data-filter="peonies">Пионы</button>
+                    <button class="reviews__filter-button" data-filter="tulips">Тюльпаны</button>
+                    <button class="reviews__filter-button" data-filter="hydrangeas">Гортензии</button>
+                </div>
+                <ul id="reviews-list" class="reviews__list"></ul>
+            </section>
+
+            <!-- Динамический блок из JSON -->
+            <div id="dynamic-cards" class="dynamic-cards"></div>
+
+            <!-- Видео о букетах -->
+            <section class="video">
+                <h2 class="video__title">Видео о букетах</h2>
+                <div class="video__grid">
+                    <div class="video-player">
+                        <h3 class="video-player__title">Видеоплеер</h3>
+                    </div>
+                    <div class="florist-info">
+                        <h3 class="florist-info__title">Флорист</h3>
+                        <p class="florist-info__name">Анна К.</p>
+                        <p class="florist-info__description">Профессиональный флорист с 10-летним опытом создания букетов</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Кнопка скролла вверх -->
+        <button id="scroll-top" class="scroll-top">↑ Вверх</button>
+
+        <footer class="footer">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Контакты</h3>
+                    <p>г. Москва, ул. Цветочная, 15</p>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>info@nezhnuy-buket.ru</p>
+                    <p>Ежедневно с 9:00 до 21:00</p>
+                </div>
+                <div class="footer__section">
+                    <h3>Меню</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="#"><img src="images/vk.png" alt="VK"></a>
+                        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="images/telegram.png" alt="Telegram"></a>
+                    </div>
+                    <p>Подпишитесь на наши новости и акции</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit">Подписаться</button>
+                    </form>
                 </div>
             </div>
-            <div class="nav__buttons">
-                <a href="catalog.html"><button class="nav__button" type="button">Каталог</button></a>
-                <a href="order.html"><button class="nav__button" type="button">Оформить заказ</button></a>
-                <a href="cart.html"><button class="nav__button" type="button">Корзина</button></a>
-                <button class="nav__button" type="button" id="admin-btn" style="display: none;">Админ-панель</button>
-                <a href="register.html"><button class="nav__button" type="button" id="register-btn">Регистрация</button></a>
-                <a href="login.html"><button class="nav__button nav__button--login" type="button" id="login-btn">Вход</button></a>
-                <button class="nav__button" type="button" id="logout-btn" style="display: none;">Выход</button>
-            </div>
-            <span class="menu-toggle">☰</span>
-        </nav>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Искать" class="search-bar__input">
-            <button type="button" id="search-btn" class="nav__button search-bar__button">Искать</button>
-        </div>
-    </header>
-    <main class="main">
-        <section class="section">
-            <h2 class="section__title">Лучшие предложения</h2>
-            <div class="grid" id="best-offers"></div>
-        </section>
-        <section class="section">
-            <h2 class="section__title">Скидки</h2>
-            <div class="grid" id="discounts"></div>
-        </section>
-        <section class="section">
-            <h2 class="section__title">Топ букетов</h2>
-            <div class="swiper-container">
-                <div class="swiper-wrapper" id="top-bouquets"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </section>
-        <section class="section reviews">
-            <h2 class="section__title">Отзывы наших клиентов</h2>
-            <div class="review">
-                <p class="review__author">Анна, 28 лет</p>
-                <p>Заказывала букет "Нежность" на годовщину свадьбы. Цветы были свежие и красивые, доставили точно в срок. Муж был в восторге!</p>
-            </div>
-            <div class="review">
-                <p class="review__author">Ольга, 35 лет</p>
-                <p>Букет "Сиреневый рай" превзошёл все ожидания! Цветы простоят долго, аромат потрясающий.</p>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__section">
-                <h3>Контакты</h3>
-                <p>г. Москва, ул. Цветочная, 15</p>
-                <a href="tel:+74951234567">+7 (495) 123-45-67</a>
-                <a href="mailto:info@nezhnuy-buket.ru">info@nezhnuy-buket.ru</a>
-                <p>Ежедневно с 9:00 до 21:00</p>
-            </div>
-            <div class="footer__section">
-                <h3>Меню</h3>
-                <a href="index.html">Главная</a>
-                <a href="catalog.html">Каталог</a>
-                <a href="order.html">Оформление заказа</a>
-                <a href="cart.html">Корзина</a>
-                <a href="#">Контакты</a>
-            </div>
-            <div class="footer__section">
-                <h3>Мы в соцсетях</h3>
-                <div class="footer__social-icons">
-                    <a href="#"><img src="images/vk.png" alt="ВКонтакте" width="30" height="30" class="footer__social-icon"></a>
-                    <a href="#"><img src="images/telegram.png" alt="Телеграм" width="30" height="30" class="footer__social-icon"></a>
-                    <a href="#"><img src="images/whatsapp.png" alt="Instagram" width="30" height="30" class="footer__social-icon"></a>
-                </div>
-                <p>Подпишитесь на наши новости и акции</p>
-                <button class="nav__button" type="button">Подписаться</button>
-            </div>
-        </div>
-        <div class="footer__copyright">
-            <p>© 2025 Цветочный магазин "Нежный букет". Все права защищены.</p>
-        </div>
-    </footer>
+            <p class="footer__copyright">© 2025 Нежный букет. Все права защищены.</p>
+        </footer>
+    </div>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="scripts/script.js"></script>
 </body>

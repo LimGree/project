@@ -4,90 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оформление заказа - Нежный букет</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Нежный букет - Оформление заказа</title>
+    <link rel="stylesheet" href="styles/styleSet.css">
 </head>
 
 <body>
-    <div class="preloader">
-        <div class="spinner"></div>
+    <!-- Прелоадер -->
+    <div id="preloader" class="preloader">
+        <div class="preloader__dots">
+            <span class="preloader-dot"></span>
+            <span class="preloader-dot"></span>
+            <span class="preloader-dot"></span>
+        </div>
+        <p class="preloader__text">Загрузка...</p>
     </div>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav__logo">
-                <img src="images/logo.png" alt="логотип Нежный букет" width="150" height="150" class="nav__logo-img">
-                <div class="nav__logo-text">
-                    <h1>Нежный букет</h1>
-                    <p>цветы с любовью</p>
+
+    <!-- Основной контент -->
+    <div id="content" class="content hidden">
+        <header class="header">
+            <nav class="links">
+                <button class="burger-menu">☰</button>
+                <ul class="links-list">
+                    <li><a href="index.html" class="links-link" data-page="home">Главная</a></li>
+                    <li><a href="catalog.html" class="links-link" data-page="catalog">Каталог</a></li>
+                    <li><a href="order.html" class="links-link" data-page="order">Оформить заказ</a></li>
+                    <li><a href="cart.html" class="links-link" data-page="cart">Корзина</a></li>
+                    <li><a href="admin.html" class="links-link" data-page="admin">Админ-панель</a></li>
+                    <li><a href="register.html" class="links-link" data-page="register">Регистрация</a></li>
+                    <li><a href="login.html" class="links-link" data-page="login">Вход</a></li>
+                    <li><a href="#" class="links-link" data-page="logout">Выход</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <section class="order">
+                <h2 class="section__title">Оформление заказа</h2>
+                <div class="order__selected">
+                    <h3>Выбранные букеты</h3>
+                    <ul id="order-list" class="order__list"></ul>
+                    <p id="order-total">Итого: 0 ₽</p>
+                </div>
+                <form id="order-form" class="order-form">
+                    <h3>Данные для доставки</h3>
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" required>
+                    <label for="address">Адрес:</label>
+                    <input type="text" id="address" required>
+                    <label for="message">Фраза при получении:</label>
+                    <input type="text" id="message">
+                    <button type="submit">Оплатить</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Кнопка скролла вверх -->
+        <button id="scroll-top" class="scroll-top">↑ Вверх</button>
+
+        <footer class="footer">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Контакты</h3>
+                    <p>г. Москва, ул. Цветочная, 15</p>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>info@nezhnuy-buket.ru</p>
+                    <p>Ежедневно с 9:00 до 21:00</p>
+                </div>
+                <div class="footer__section">
+                    <h3>Меню</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                        <li><a href="cart.html">Корзина</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="#"><img src="images/vk.png" alt="VK"></a>
+                        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="images/telegram.png" alt="Telegram"></a>
+                    </div>
+                    <p>Подпишитесь на наши новости и акции</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit">Подписаться</button>
+                    </form>
                 </div>
             </div>
-            <div class="nav__buttons">
-                <a href="index.html"><button class="nav__button" type="button">Главная</button></a>
-                <a href="catalog.html"><button class="nav__button" type="button">Каталог</button></a>
-                <a href="cart.html"><button class="nav__button" type="button">Корзина</button></a>
-                <button class="nav__button" type="button" id="admin-btn" style="display: none;">Админ-панель</button>
-                <a href="register.html"><button class="nav__button" type="button" id="register-btn">Регистрация</button></a>
-                <a href="login.html"><button class="nav__button nav__button--login" type="button" id="login-btn">Вход</button></a>
-                <button class="nav__button" type="button" id="logout-btn" style="display: none;">Выход</button>
-            </div>
-            <span class="menu-toggle">☰</span>
-        </nav>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Искать" class="search-bar__input">
-            <button type="button" id="search-btn" class="nav__button search-bar__button">Искать</button>
-        </div>
-    </header>
-    <main class="main">
-        <section class="section order-content">
-            <h2 class="section__title">Оформление заказа</h2>
-            <div class="order-items">
-                <h3 class="section__subtitle">Выбранные букеты</h3>
-                <div id="cart-items"></div>
-            </div>
-            <form id="order-form" class="order-form" action="/submit-order" method="post">
-                <h3 class="section__subtitle">Данные для доставки</h3>
-                <label for="name" class="order-form__label">Имя:</label>
-                <input type="text" id="name" class="order-form__input" required>
-                <label for="address" class="order-form__label">Адрес:</label>
-                <input type="text" id="address" class="order-form__input" required>
-                <label for="message" class="order-form__label">Фраза при получении:</label>
-                <textarea id="message" class="order-form__textarea"></textarea>
-                <button type="submit" class="nav__button">Оплатить</button>
-            </form>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__section">
-                <h3>Контакты</h3>
-                <p>г. Москва, ул. Цветочная, 15</p>
-                <a href="tel:+74951234567">+7 (495) 123-45-67</a>
-                <a href="mailto:info@nezhnuy-buket.ru">info@nezhnuy-buket.ru</a>
-                <p>Ежедневно с 9:00 до 21:00</p>
-            </div>
-            <div class="footer__section">
-                <h3>Меню</h3>
-                <a href="index.html">Главная</a>
-                <a href="catalog.html">Каталог</a>
-                <a href="order.html">Оформление заказа</a>
-                <a href="cart.html">Корзина</a>
-                <a href="#">Контакты</a>
-            </div>
-            <div class="footer__section">
-                <h3>Мы в соцсетях</h3>
-                <div class="footer__social-icons">
-                    <a href="#"><img src="images/vk.png" alt="ВКонтакте" width="30" height="30" class="footer__social-icon"></a>
-                    <a href="#"><img src="images/telegram.png" alt="Телеграм" width="30" height="30" class="footer__social-icon"></a>
-                    <a href="#"><img src="images/whatsapp.png" alt="WhatsApp" width="30" height="30" class="footer__social-icon"></a>
-                </div>
-                <p>Подпишитесь на наши новости и акции</p>
-                <button class="nav__button" type="button">Подписаться</button>
-            </div>
-        </div>
-        <div class="footer__copyright">
-            <p>© 2025 Цветочный магазин "Нежный букет". Все права защищены.</p>
-        </div>
-    </footer>
+            <p class="footer__copyright">© 2025 Нежный букет. Все права защищены.</p>
+        </footer>
+    </div>
+
     <script src="scripts/script.js"></script>
 </body>
 
